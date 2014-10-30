@@ -1,0 +1,79 @@
+#include "PwrUSBCmd.cpp"
+
+// The purpose of this file is to provide a few functions for SWIG wrapping to Python while leaving the
+// `PwrUSBCmd.cpp` file (almost) unchanged.  ("almost" because did have to change the path to the dylib)
+
+extern char* version()
+{
+    return "0.2.0";
+}
+
+extern void get_outlet_states(int bank, int *outlet1, int *outlet2, int *outlet3)
+{
+	int pause=0, current=0, model, connected=0;
+    int in1, in2, in3, i, MaxUnits;
+    int ioStates[7];
+	char firmware[32];
+
+	memset(ioStates, 0, sizeof(int)*7);					// triggger state of 3 outputs and 4 inputs
+    strcpy(firmware, "");
+    loadSharedLibrary();
+    
+    
+    if ((MaxUnits=(*InitPowerUSB_Address)(&i, firmware)) > 0)		// Initialize the PowerUSB
+        connected = (*CheckStatusPowerUSB_Address)();
+    // TODO: sometime when I have multiple pwrusb strips attached, test `bank`
+    (*SetCurrentPowerUSB_Address)(bank);
+    (*ReadPortStatePowerUSB_Address)(&in1, &in2, &in3);
+    *outlet1 = in1;
+    *outlet2 = in2;
+    *outlet3 = in3;
+    return;
+}
+
+
+extern void set_outlet_states(int bank, int outlet1, int outlet2, int outlet3)
+{
+	int pause=0, current=0, model, connected=0;
+    int in1, in2, in3, i, MaxUnits;
+    int ioStates[7];
+	char firmware[32];
+
+	memset(ioStates, 0, sizeof(int)*7);					// triggger state of 3 outputs and 4 inputs
+    strcpy(firmware, "");
+    loadSharedLibrary();
+    
+    if ((MaxUnits=(*InitPowerUSB_Address)(&i, firmware)) > 0)		// Initialize the PowerUSB
+        connected = (*CheckStatusPowerUSB_Address)();
+    // TODO: sometime when I have multiple pwrusb strips attached, test `bank`
+    (*SetCurrentPowerUSB_Address)(bank);
+    (*SetPortPowerUSB_Address)(outlet1, outlet2, outlet3);
+    return;
+}
+
+
+extern int get_single_outlet_state(int bank, int outlet_number)
+{
+    int outlet1, outlet2, outlet3;
+    get_outlet_states(bank, &outlet1, &outlet2, &outlet3);
+    if (outlet_number == 1){return outlet1;}
+    else if (outlet_number == 2){return outlet2;}
+    else if (outlet_number == 3){return outlet3;}
+    else{return -1;}
+}
+
+
+extern void set_single_outlet_state(int bank, int outlet_number, int state)
+{
+    int outlet1, outlet2, outlet3, state_checked;
+    if (state)
+        state_checked = 1;
+    else
+        state_checked = 0;
+    get_outlet_states(bank, &outlet1, &outlet2, &outlet3);
+    if (outlet_number == 1){outlet1 = state_checked;}
+    else if (outlet_number == 2){outlet2 = state_checked;}
+    else if (outlet_number == 3){outlet3 = state_checked;}
+    set_outlet_states(bank, outlet1, outlet2, outlet3);
+    return;
+}
