@@ -9,7 +9,7 @@ Exact copy of `Mac/powerusb_commandline_mac/normal/source\ code/PwrUSBImp.h`
 Retrieved 2014-10-30.  
 Last modified 2012-06-01.
 Checksum:  `MD5 (PwrUSBImp.h) = 1ee288817fb8c8a69eb2204b192809b0`
-Note that for copyright reasons this file should *not* be distributed with the package, but can be (at least as of 2014-10-30) retrieved from [pwrusb's website](http://www.pwrusb.com/downloads.html)
+Note that for copyright reasons this file should *not* be distributed with the package, but can be (at least as of 2014-10-30) retrieved from [pwrusb's website](http://www.pwrusb.com/downloads.html) in the Mac software package.
 
 
 **`PwrUsbCmd.cpp`**
@@ -17,7 +17,7 @@ Exact copy of `Mac/powerusb_commandline_mac/normal/source\ code/PwrUsbCmd.cpp`
 Retrieved 2014-10-30.  
 Last modified 2012-06-01.
 Checksum:  `MD5 (PwrUsbCmd.cpp) = a1e44a69d16d24d934fc20077fe2e69c`
-Note that for copyright reasons this file should *not* be distributed with the package, but can be (at least as of 2014-10-30) retrieved from [pwrusb's website](http://www.pwrusb.com/downloads.html)
+Note that for copyright reasons this file should *not* be distributed with the package, but can be (at least as of 2014-10-30) retrieved from [pwrusb's website](http://www.pwrusb.com/downloads.html) in the Mac software package.
 
 
 **`PwrUsbCmd_interface.cpp`**
