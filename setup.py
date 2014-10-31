@@ -14,11 +14,11 @@ class MyBuild(build):
 setup(name="pwrusb",
       version="0.2.0",
       description="Control pwrusb.com power strip outlets",
-      long_description=open('README.txt').read(),
+      long_description=open('README.md').read(),
       author='Henry Roe',
       author_email='hroe@hroe.me',
       license="LICENSE.TXT",
       cmdclass={'build': MyBuild},
       data_files=[(get_python_lib() + '/', ['_pwrusb.so']),
-                  ('/usr/local/lib/', ['libpowerusb.dylib'])],
+                  (get_python_lib() + '/', ['libpowerusb.dylib'])],
       py_modules=["pwrusb"])

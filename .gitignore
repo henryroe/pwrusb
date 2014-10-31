@@ -25,6 +25,8 @@ CVS
 PwrUsbCmd.cpp
 PwrUSBImp.h
 libpowerusb.dylib
+Mac
+Mac.zip
 
 # because the next two files are auto-generated in compilation
 pwrusb.py

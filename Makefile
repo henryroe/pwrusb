@@ -1,10 +1,25 @@
 PYMOD_INC ?= $(shell python-config --includes)
 
 _PwrUsbCmd.cpp:  PwrUsbCmd.cpp
-	sed -e 's/".\/libpowerusb.dylib"/"~\/Library\/Application\ Support\/pwruHenry Roe <henryroe@mac.com>sb\/libpowerusb.dylib"/g' PwrUsbCmd.cpp > _PwrUsbCmd.cpp
+	cp PwrUsbCmd.cpp _PwrUsbCmd.cpp
+#	sed -e 's/".\/libpowerusb.dylib"/"~\/Library\/Application\ Support\/pwrusb\/libpowerusb.dylib"/g' PwrUsbCmd.cpp > _PwrUsbCmd.cpp
 
+Mac.zip:
+	curl -O http://www.pwrusb.com/downloads/Mac.zip
 
-_pwrusb.so:  PwrUsbCmd_interface.cpp  PwrUsbCmd_interface.i  _PwrUsbCmd.cpp
+libpowerusb.dylib:  Mac.zip
+	unzip -of Mac.zip
+	mv `find Mac -name libpowerusb.dylib | head -1` .
+
+PwrUsbCmd.cpp:  Mac.zip
+	unzip -of Mac.zip
+	mv `find Mac -name PwrUsbCmd.cpp | head -1` .
+
+PwrUSBImp.h:  Mac.zip
+	unzip -of Mac.zip
+	mv `find Mac -name PwrUSBImp.h | head -1` .
+
+_pwrusb.so:  PwrUsbCmd_interface.cpp  PwrUsbCmd_interface.i  _PwrUsbCmd.cpp  libpowerusb.dylib  PwrUsbCmd.cpp  PwrUSBImp.h
 	swig -c++ -python -o PwrUsbCmd_interface_wrap.cpp PwrUsbCmd_interface.i
 	g++ -fPIC -Wall -g -c -framework IOKit -framework CoreFoundation PwrUsbCmd_interface.cpp
 	g++ -fPIC -Wall -g -c -framework IOKit -framework CoreFoundation PwrUsbCmd_interface_wrap.cpp -I$(PYMOD_INC)
@@ -19,3 +34,6 @@ clean:
 	rm -f *.pyc
 	rm -f PwrUsbCmd_interface_wrap.cpp
 	rm -f pwrusb.py
+	rm -rf Mac
+	rm -f libpowerusb.dylib
+#	rm -f Mac.zip

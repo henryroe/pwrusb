@@ -5,7 +5,7 @@ A python wrapper for controlling pwrusb.com power strip outlets.
 
 ## Installation notes
 
-To avoid copyright issues, several files are not included in this distribution.  They can be downloaded from the Mac software distribution from the [pwrusb website](http://www.pwrusb.com/downloads.html).  These files are:
+To avoid copyright issues, several files are not included in this distribution.  Makefile will attempt to download and install these files automatically.  Or, they can be downloaded from the Mac software distribution from the [pwrusb website](http://www.pwrusb.com/downloads.html).  These files are:
     
     PwrUSBImp.h
     PwrUsbCmd.cpp
