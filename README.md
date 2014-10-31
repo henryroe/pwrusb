@@ -17,6 +17,12 @@ A version of libusb-1.0 will need to be installed.  One straightforward way to g
     
 The `swig` package also needs to be installed in your python distribution for pwrusb to work.
 
+## Typical Installation
+
+From PyPI:
+
+    pip install pwrusb
+
 ## Usage
 
 Example usage:
