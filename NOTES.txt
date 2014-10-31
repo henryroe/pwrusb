@@ -20,6 +20,14 @@ Checksum:  `MD5 (PwrUsbCmd.cpp) = a1e44a69d16d24d934fc20077fe2e69c`
 Note that for copyright reasons this file should *not* be distributed with the package, but can be (at least as of 2014-10-30) retrieved from [pwrusb's website](http://www.pwrusb.com/downloads.html) in the Mac software package.
 
 
+**`libpowerusb.dylib`**
+Exact copy of `Mac/powerusb_commandline_mac/normal/source\ code/libpowerusb.dylib`
+Retrieved 2014-10-30.  
+Last modified 2012-06-01.
+Checksum:  `MD5 (libpowerusb.dylib) = 20701d6c6893101e057fde59ab019788`
+Note that for copyright reasons this file should *not* be distributed with the package, but can be (at least as of 2014-10-30) retrieved from [pwrusb's website](http://www.pwrusb.com/downloads.html) in the Mac software package.
+
+
 **`PwrUsbCmd_interface.cpp`**
 The purpose of this file is to provide a few functions for SWIG wrapping to Python while leaving the `PwrUSBCmd.cpp` file unchanged.
 
