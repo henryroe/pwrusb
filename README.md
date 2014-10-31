@@ -31,3 +31,6 @@ Example usage:
     for outlet in [1, 2, 3]:
         pwrusb.set_single_outlet_state(bank, outlet, False)
 
+# History
+
+Originally written by hroe in 2014-January.  Repackaged for upload to github and pypi in 2014-October.

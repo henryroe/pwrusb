@@ -1,0 +1,7 @@
+include README.md
+include CHANGES.txt
+include LICENSE.txt
+include Makefile
+include NOTES.txt
+include PwrUsbCmd_interface.cpp
+include PwrUsbCmd_interface.i

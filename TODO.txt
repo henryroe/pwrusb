@@ -1,0 +1,6 @@
+
+Add dependency on `swig` to setup.py.
+
+Add check for installation of libusb-1.0 and give some sort of useful error message if not available.
+
+

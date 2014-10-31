@@ -28,10 +28,13 @@ libpowerusb.dylib
 Mac
 Mac.zip
 
-# because the next two files are auto-generated in compilation
+# because the next files are auto-generated in compilation
 pwrusb.py
 PwrUsbCmd_interface_wrap.cpp
 _PwrUsbCmd.cpp
+MANIFEST
+
+*egg-info
+dist
 
 .dropbox
-

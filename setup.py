@@ -9,12 +9,11 @@ import pdb
 
 class MyBuild(build):
     def run(self):
-        subprocess.call("make _pwrusb.so")
+        subprocess.call("make")
         build.run(self)
 
 setup(name="pwrusb",
       version="0.2.0",
-      packages=['pwrusb'],
       description="Control pwrusb.com power strip outlets",
       long_description=open('README.md').read(),
       author='Henry Roe',

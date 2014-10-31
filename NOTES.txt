@@ -1,5 +1,5 @@
 
-# Files needed in thispackage
+# Files needed in this package
 
 **`NOTES.txt`**
 This file.
@@ -48,7 +48,14 @@ The purpose of this file is to provide a few functions for SWIG wrapping to Pyth
 **`LICENSE.txt`**
 
 
-**`README.txt`**
+**`README.md`**
+
+
+**`TODO.txt`**
 
 
 **`setup.py`**
+
+
+**`setup.cfg`**
+

@@ -1,7 +1,8 @@
-#include "PwrUSBCmd.cpp"
+#include "_PwrUSBCmd.cpp"
 
 // The purpose of this file is to provide a few functions for SWIG wrapping to Python while leaving the
-// `PwrUSBCmd.cpp` file (almost) unchanged.  ("almost" because did have to change the path to the dylib)
+// `PwrUSBCmd.cpp` file unchanged.  (the path to the dylib has to be changed in the make process
+// and at that point we renamed the file to _PwrUSBCmd.cpp)
 
 extern char* version()
 {
