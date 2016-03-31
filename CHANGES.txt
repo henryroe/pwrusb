@@ -1,2 +1,16 @@
-v0.1.0, 2014-01-16 -- Initial working version via SWIG interface
-v0.2.0, 2014-10-31 -- Repackaged for github and pypi
+~~~~~~~~~~~~~~~~~
+pwrusb Change Log
+~~~~~~~~~~~~~~~~~
+
+------------------
+v0.2.0, 2014-10-31
+------------------
+
+- Repackaged for github and pypi
+
+
+------------------
+v0.1.0, 2014-01-16
+------------------
+
+- Initial working version via SWIG interface
