@@ -29,7 +29,7 @@ Mac
 Mac.zip
 
 # because the next files are auto-generated in compilation
-pwrusb.py
+pwrusb_swig_interface.py
 PwrUsbCmd_interface_wrap.cpp
 PwrUsbCmd_interface.cpp
 _PwrUsbCmd.cpp

@@ -51,7 +51,7 @@ setup(name=about["__title__"],
       url=about["__uri__"],
       license=about["__license__"],
       cmdclass={'build': MyBuild},
-      data_files=[(get_python_lib() + '/', ['_pwrusb.so']),
+      data_files=[(get_python_lib() + '/', ['_pwrusb_swig_interface.so']),
                   (get_python_lib() + '/', ['libpowerusb.dylib'])],
       # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
@@ -89,5 +89,5 @@ setup(name=about["__title__"],
           'Programming Language :: Python :: 3.5',
       ],
       keywords='pwrusb pdu usb power-control',
-      py_modules=["pwrusb"])
+      py_modules=["pwrusb_swig_interface"])
 

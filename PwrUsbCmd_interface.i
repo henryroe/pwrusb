@@ -1,4 +1,4 @@
-%module pwrusb
+%module pwrusb_swig_interface
 %include "typemaps.i"
 %{
 extern int get_single_outlet_state(int bank, int outlet_number);
