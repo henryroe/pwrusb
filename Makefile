@@ -1,6 +1,5 @@
 PYMOD_INC ?= $(shell python-config --includes)
-PYSITE_PACKAGES ?= $(shell python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")
-
+PYSITE_PACKAGES ?= $(shell python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")
 
 all:   _pwrusb.so
 	echo "Make all successfully made _pwrusb.so"
