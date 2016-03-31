@@ -59,3 +59,15 @@ The purpose of this file is to provide a few functions for SWIG wrapping to Pyth
 
 **`setup.cfg`**
 
+----
+
+# Set up test environment
+
+set up fresh:
+
+    conda create -n pwrusb-dev python=3.5 anaconda
+    source activate pwrusb-dev
+    pip install pypandoc
+    
+    
+    

@@ -15,7 +15,11 @@ A version of libusb-1.0 will need to be installed.  One straightforward way to g
 
     brew install libusb
     
-The `swig` package also needs to be installed in your python distribution for pwrusb to work.
+TODO: determine if above is libusb or libusb-compat
+    
+The `swig` package also needs to be installed in your python distribution for pwrusb to work. One straightforward way to get this is via [homebrew](http://brew.sh/) with:
+
+    brew install swig
 
 ## Typical Installation
 

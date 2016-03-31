@@ -1,9 +1,9 @@
 Next release (0.3.0):
-- reorganize to better project layout
-- add check for install that on OS X and useful error message if not
-- add check for install of Xcode command line tools and useful error message if not available
-- Add dependency on `swig` to setup.py.
+- reorganize to better project layout @done(2016-03-31)
+- add check for install that on OS X and useful error message if not @done(2016-03-31)
+- add check for install of Xcode command line tools and useful error message if not available @done(2016-03-31)
+- Add dependency on `swig` to setup.py. @done(2016-03-31)
+- check what is failure mode if libusb not installed
+- check if need libusb or libusb-compat installed
 - Add check for installation of libusb-1.0 and give some sort of useful error message if not available.
-- work with python 2.7
-- work with python 3.5
 Bugs:
