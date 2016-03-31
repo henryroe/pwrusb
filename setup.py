@@ -43,7 +43,7 @@ class MyBuild(build):
         build.run(self)
 
 setup(name=about["__title__"],
-      version=["__version__"],
+      version=about["__version__"],
       description=about["__summary__"],
       long_description=long_description,
       author=about["__author__"],

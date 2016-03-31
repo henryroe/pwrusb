@@ -6,7 +6,7 @@
 
 extern char* version()
 {
-    return "0.2.0";
+    return "ABC-version-XYZ";
 }
 
 extern void get_outlet_states(int bank, int *outlet1, int *outlet2, int *outlet3)

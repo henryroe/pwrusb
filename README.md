@@ -34,10 +34,10 @@ Example usage:
     import pwrusb
     bank = 0
     for outlet in [1, 2, 3]:
-        print "outlet {} is {}".format(outlet, pwrusb.get_single_outlet_state(bank, outlet))
+        print("outlet {} is {}".format(outlet, pwrusb.get_single_outlet_state(bank, outlet)))
     pwrusb.set_single_outlet_state(bank, 2, True)
     for outlet in [1, 2, 3]:
-        print "outlet {} is {}".format(outlet, pwrusb.get_single_outlet_state(bank, outlet))
+        print("outlet {} is {}".format(outlet, pwrusb.get_single_outlet_state(bank, outlet)))
     for outlet in [1, 2, 3]:
         pwrusb.set_single_outlet_state(bank, outlet, False)
 

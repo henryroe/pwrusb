@@ -68,6 +68,17 @@ set up fresh:
     conda create -n pwrusb-dev python=3.5 anaconda
     source activate pwrusb-dev
     pip install pypandoc
+
+# testing
+
+install:
+
+    python setup.py install --record installed_files.txt
+
+uninstall:
+    
+    cat installed_files.txt | xargs rm -rf 
+    
     
     
     
