@@ -39,4 +39,6 @@ Example usage:
 
 # History
 
-Originally written by hroe in 2014-January.  Repackaged for upload to github and pypi in 2014-October.
+- Originally written by hroe in 2014-January.
+- Repackaged for upload to github and pypi in 2014-October.
+- Lots of small updates to project layout etc, including update to Python 3.5 compatibility in 2016-March.

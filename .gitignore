@@ -21,7 +21,7 @@ CVS
 *.so
 *.pyc
 
-# because the next two files must be downloaded separately from http://www.pwrusb.com/downloads.html
+# because the next files must be downloaded separately from http://www.pwrusb.com/downloads.html
 PwrUsbCmd.cpp
 PwrUSBImp.h
 libpowerusb.dylib
