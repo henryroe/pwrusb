@@ -5,8 +5,7 @@ Next release (0.3.0):
 - Add dependency on `swig` to setup.py. @done(2016-03-31)
 - get working again on 2014MBPr @done(2016-03-31)
 - add additional functionality and clean-up
-- reduce functionality to single bank
-- fix compiler warnings
+- fix compiler warnings @done(2016-03-31)
 - check what error msgs look like when not connected and/or unpowered?
 - check what is failure mode if libusb not installed
 - check if need libusb or libusb-compat installed
@@ -14,3 +13,5 @@ Next release (0.3.0):
 - re-write README.md to reflect changes 
 - re-enable deleting of download file in `make clean`
 Bugs:
+	Build bugs:
+	- "ld: warning: -macosx_version_min not specified, assuming 10.10"
