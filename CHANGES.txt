@@ -2,8 +2,14 @@
 pwrusb Change Log
 ~~~~~~~~~~~~~~~~~
 
+------------------------
+v1.0.0dev1-2, 2016-04-01
+------------------------
+
+- fixed bug in release scripts that left necessary files out
+
 ----------------------
-v1.0.0dev1, 2016-03-31
+v1.0.0dev1, 2016-04-01
 ----------------------
 
 - major reorganization of project
