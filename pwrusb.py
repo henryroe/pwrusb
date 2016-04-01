@@ -10,6 +10,8 @@ class pwrusbError(Exception):
 n_banks = __pwrusb.get_number_of_strips_attached() 
 
 def _validate_outlet_and_bank(outlet, bank):
+    if n_banks <= 1:
+        raise pwrusbError("no pwrusb.com strips detected on USB")
     if outlet not in [1,2,3]:
         raise pwrusbError(("Unrecognized outlet number {0} " + 
                            "(outlet should be one of 1,2,3)").format(outlet))
