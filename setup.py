@@ -89,5 +89,5 @@ setup(name=about["__title__"],
           'Programming Language :: Python :: 3.5',
       ],
       keywords='pwrusb pdu usb power-control',
-      py_modules=["pwrusb_swig_interface"])
+      py_modules=["pwrusb", "pwrusb_swig_interface"])
 

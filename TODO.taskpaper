@@ -5,10 +5,12 @@ Next release (0.3.0):
 - Add dependency on `swig` to setup.py. @done(2016-03-31)
 - get working again on 2014MBPr @done(2016-03-31)
 - add additional functionality and clean-up
+- reduce functionality to single bank
 - fix compiler warnings
 - check what error msgs look like when not connected and/or unpowered?
 - check what is failure mode if libusb not installed
 - check if need libusb or libusb-compat installed
 - Add check for installation of libusb-1.0 and give some sort of useful error message if not available.
+- re-write README.md to reflect changes 
 - re-enable deleting of download file in `make clean`
 Bugs:
