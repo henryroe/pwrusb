@@ -98,7 +98,7 @@ uninstall:
     versionnumber=`./get_current_pwrusb_version_number.sh`
     git tag -a $versionnumber -m "Tagged for version "$versionnumber
     git push origin $versionnumber
-    git push origin
+    git push origin master
     python setup.py sdist
     python setup.py bdist_wheel
     twine upload -r pypi dist/*
