@@ -78,7 +78,27 @@ install:
 uninstall:
     
     cat installed_files.txt | xargs rm -rf 
-    
-    
-    
-    
+
+
+----
+
+# Checklist for release to github & pypi
+
+- update version number in __about__.py (see notes in that file for version numbering convention)
+- Update CHANGES.txt
+- be sure to add all changes in git
+- be sure got COMMIT all changes in git
+- check `git status` to make sure nothing still dangling
+- Then:
+
+    cd /Users/hroe/Dropbox/py/pwrusb
+    rm -rf dist/*  # you probably want to do this to clean up
+    rm -rf build   # you may want to do this to clean up?
+    python setup.py sdist
+    versionnumber=`./get_current_pwrusb_version_number.sh`
+    git tag -a $versionnumber -m "Tagged for version "$versionnumber
+    git push origin $versionnumber
+    git push origin
+    python setup.py sdist
+    python setup.py bdist_wheel
+    twine upload -r pypi dist/*
