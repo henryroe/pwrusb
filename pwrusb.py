@@ -34,8 +34,6 @@ def get_outlet_state(outlet, bank=0):
     """
     _validate_outlet_and_bank(outlet, bank)
     state = __pwrusb.get_single_outlet_state(bank, outlet)
-    import sys
-    sys.stderr.write("bank, outlet, state = {0},{1},{2}\n".format(bank,outlet,state))
     if state == 0:
         return False
     if state == 1:
@@ -59,8 +57,6 @@ def get_all_outlet_states(bank=0):
     states = []
     for outlet in [1, 2, 3]:
         state = __pwrusb.get_single_outlet_state(bank, outlet)
-        import sys
-        sys.stderr.write("bank, outlet, state = {0},{1},{2}\n".format(bank,outlet,state))
         if state == 0:
             states.append(False)
         elif state == 1:
