@@ -34,7 +34,7 @@ with open(os.path.join(base_dir, 'README.md'), encoding='utf-8') as f:
 try:
     from pypandoc import convert
     long_description = convert('README.md', 'rst', format='md')
-except ImportError, OSError:
+except (ImportError, OSError) as e:
     print("warning: pypandoc module not found, could not convert Markdown to RST")
 
 class MyBuild(build):
