@@ -7,6 +7,7 @@ v1.0.0dev1, 2016-03-31
 ----------------------
 
 - major reorganization of project
+- significant additional install/build error checking
 - changes to protocol for calling
 
 
