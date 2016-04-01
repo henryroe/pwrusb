@@ -20,7 +20,7 @@ TODO: determine if above should be libusb or libusb-compat
 The `swig` package also needs to be installed in your python distribution for pwrusb to work. One straightforward way to get this is via [homebrew](http://brew.sh/) with:
 
     brew install swig
-
+    
 ## Typical Installation
 
 From PyPI:
@@ -47,6 +47,10 @@ Example usage:
     # read state of only outlet #3
     pwrusb.get_outlet_state(3)
     
+## Additional Usage Notes
+
+Lighted power switch on pwrusb.com strips controls power to outlets, but does not power on/off the USB controller within the strip.  When the physical switch is off, strip should report a low (but not zero) current draw and will report what state the outlets will be when the physical switch is flipped back on, i.e. can report True even when no power is coming out of an outlet.
+
 # History
 
 - Originally written by hroe in 2014-January.

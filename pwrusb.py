@@ -10,7 +10,7 @@ class pwrusbError(Exception):
 n_banks = __pwrusb.get_number_of_strips_attached() 
 
 def _validate_outlet_and_bank(outlet, bank):
-    if n_banks <= 1:
+    if n_banks < 1:
         raise pwrusbError("no pwrusb.com strips detected on USB")
     if outlet not in [1,2,3]:
         raise pwrusbError(("Unrecognized outlet number {0} " + 
@@ -34,6 +34,8 @@ def get_outlet_state(outlet, bank=0):
     """
     _validate_outlet_and_bank(outlet, bank)
     state = __pwrusb.get_single_outlet_state(bank, outlet)
+    import sys
+    sys.stderr.write("bank, outlet, state = {0},{1},{2}\n".format(bank,outlet,state))
     if state == 0:
         return False
     if state == 1:
@@ -57,6 +59,8 @@ def get_all_outlet_states(bank=0):
     states = []
     for outlet in [1, 2, 3]:
         state = __pwrusb.get_single_outlet_state(bank, outlet)
+        import sys
+        sys.stderr.write("bank, outlet, state = {0},{1},{2}\n".format(bank,outlet,state))
         if state == 0:
             states.append(False)
         elif state == 1:
@@ -103,3 +107,15 @@ def set_all_outlet_states(states, bank=0):
     states = [True if a else False for a in states]
     for i,cur_state in enumerate(states):
         set_outlet_state(i+1, cur_state, bank=bank)
+
+def get_total_current_milliamps(bank=0):
+    """
+    Read the total current (milliamps) being drawn on a pwrusb.com power strip.
+    Note that will not be 0 even when all outlets are off as the strip itself draws a 
+    small amount of current.
+    
+    There is no way to read the individual outlet current draw.
+    """
+    return __pwrusb.get_total_current_milliamps(bank)
+    
+    
