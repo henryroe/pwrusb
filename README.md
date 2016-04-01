@@ -15,7 +15,7 @@ A version of libusb-1.0 will need to be installed.  One straightforward way to g
 
     brew install libusb
     
-TODO: determine if above is libusb or libusb-compat
+TODO: determine if above should be libusb or libusb-compat
     
 The `swig` package also needs to be installed in your python distribution for pwrusb to work. One straightforward way to get this is via [homebrew](http://brew.sh/) with:
 
@@ -32,15 +32,21 @@ From PyPI:
 Example usage:
 
     import pwrusb
-    bank = 0
-    for outlet in [1, 2, 3]:
-        print("outlet {} is {}".format(outlet, pwrusb.get_single_outlet_state(bank, outlet)))
-    pwrusb.set_single_outlet_state(bank, 2, True)
-    for outlet in [1, 2, 3]:
-        print("outlet {} is {}".format(outlet, pwrusb.get_single_outlet_state(bank, outlet)))
-    for outlet in [1, 2, 3]:
-        pwrusb.set_single_outlet_state(bank, outlet, False)
-
+    print("State of all outlets: {}".format(pwrusb.get_all_outlet_states()))
+    # turn ON all outlets
+    pwrusb.set_all_outlet_states(True)
+    print("State of all outlets: {}".format(pwrusb.get_all_outlet_states()))
+    # turn ON outlets 1 and 3
+    pwrusb.set_all_outlet_states([True, False, True])
+    print("State of all outlets: {}".format(pwrusb.get_all_outlet_states()))
+    # turn OFF all outlets
+    pwrusb.set_all_outlet_states(False)
+    print("State of all outlets: {}".format(pwrusb.get_all_outlet_states()))
+    # turn ON outlet #3, not changing outlets 1 or 2
+    pwrusb.set_outlet_state(3, True)
+    # read state of only outlet #3
+    pwrusb.get_outlet_state(3)
+    
 # History
 
 - Originally written by hroe in 2014-January.
