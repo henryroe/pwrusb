@@ -29,7 +29,7 @@ PwrUsbCmd_interface.cpp:  PwrUsbCmd_interface-without-version.cpp  __about__.py
 
 _pwrusb_swig_interface.so:	 PwrUsbCmd_interface.cpp  PwrUsbCmd_interface.i	 _PwrUsbCmd.cpp	 libpowerusb.dylib	PwrUSBImp.h
 	swig -c++ -python -o PwrUsbCmd_interface_wrap.cpp PwrUsbCmd_interface.i
-	g++ -fPIC -Wall -g -c -framework IOKit -framework CoreFoundation PwrUsbCmd_interface.cpp
+	g++ -fPIC -g -c PwrUsbCmd_interface.cpp
 	g++ -fPIC -Wall -g -c -framework IOKit -framework CoreFoundation PwrUsbCmd_interface_wrap.cpp -I$(PYMOD_INC)
 	ld -bundle -flat_namespace -macosx_version_min 10.7 -undefined suppress -lusb-1.0 -L./ -lpowerusb -o _pwrusb_swig_interface.so PwrUsbCmd_interface.o PwrUsbCmd_interface_wrap.o
 	install_name_tool -change libpowerusb.dylib $(PYSITE_PACKAGES)/libpowerusb.dylib _pwrusb_swig_interface.so
