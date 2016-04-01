@@ -8,10 +8,10 @@ Next release (1.0.0):
 - fix compiler warnings @done(2016-03-31)
 - check what error msgs look like when not connected and/or unpowered? @done(2016-04-01)
 - check what is failure mode if libusb not installed @done(2016-04-01)
-- check if need libusb vs libusb-compat installed
-- Add check for installation of libusb-1.0 and give some sort of useful error message if not available.
+- check if need libusb vs libusb-compat installed @done(2016-04-01)
+- Add check for installation of libusb-1.0 and give some sort of useful error message if not available. @done(2016-04-01)
 - re-write README.md to reflect changes  @done(2016-03-31)
-- re-enable deleting of download file in `make clean`
+- re-enable deleting of download file in `make clean` @done(2016-04-01)
 - release & confirm release is working
 Bugs:
 	- occasional bug where returned state is not 0 nor 1, haven't yet been able to reliably replicate
