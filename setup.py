@@ -7,6 +7,8 @@ import shutil
 import platform
 from codecs import open  # To use a consistent encoding
 import os
+import subprocess
+import re
 
 class SetupError(Exception):
     pass
@@ -21,6 +23,14 @@ for cmd in ['g++', 'ld', 'install_name_tool']:
     if shutil.which(cmd) is None:
         raise SetupError(('unable to find {}; probably means you need to install ' + 
                           'Xcode Command Line Utilities').format(cmd))
+
+usb_lib = 'usb-1.0'
+strip_whitespace = lambda s: re.sub('[\s+]', '', s)
+if (strip_whitespace('ld: library not found for -l{0}'.format(usb_lib)) in 
+    strip_whitespace(subprocess.run("ld -l{0}".format(usb_lib), shell=True, 
+                                    stderr=subprocess.PIPE).stderr.decode("utf-8"))):
+    raise SetupError(("USB library {0} not found, consider installing with, e.g.:\n\t" +
+                      "brew install libusb").format(usb_lib))
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 
