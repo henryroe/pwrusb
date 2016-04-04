@@ -1,4 +1,4 @@
-Next release (1.0.0):
+Next release (1.0.1):
 - reorganize to better project layout @done(2016-03-31)
 - add check for install that on OS X and useful error message if not @done(2016-03-31)
 - add check for install of Xcode command line tools and useful error message if not available @done(2016-03-31)
@@ -12,13 +12,14 @@ Next release (1.0.0):
 - Add check for installation of libusb-1.0 and give some sort of useful error message if not available. @done(2016-04-01)
 - re-write README.md to reflect changes  @done(2016-03-31)
 - re-enable deleting of download file in `make clean` @done(2016-04-01)
-- release & confirm release is working
+- release & confirm release is working @done(2016-04-04)
 Bugs:
-	- occasional bug where returned state is not 0 nor 1, haven't yet been able to reliably replicate
+	- occasional bug where returned state is not 0 nor 1, haven't yet been able to reliably replicate @done(2016-04-04)
 	Build bugs:
 	- "ld: warning: -macosx_version_min not specified, assuming 10.10"
 Longer term development:
-	- speed-up/simplify by enabling reading all 3 outlets simultaneously 
+	- speed-up/simplify by enabling reading all 3 outlets simultaneously  @done(2016-04-04)
+	- create better/more-robust/more-thorough test suite/sequence
 	Someday/Maybe:
 	- make more robust for hot swapping usb plugged in within same python process
 	- test/control for if two different python processes trying to control same pwrusb strip
