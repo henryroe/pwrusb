@@ -100,5 +100,5 @@ uninstall:
     git push origin $versionnumber
     git push origin master
     python setup.py sdist
-    #     python setup.py bdist_wheel  # this line not currently working, why?
+    #     python setup.py bdist_wheel  # this line not currently working, why? maybe because distutils vs setuptools?
     twine upload -r pypi dist/*

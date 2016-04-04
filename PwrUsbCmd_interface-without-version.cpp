@@ -1,4 +1,5 @@
-// #include <stdio.h>
+#include <stdio.h>
+#include <unistd.h>
 #include "_PwrUSBCmd.cpp"
 
 // The purpose of this file is to provide a few functions for SWIG wrapping to Python while leaving the
@@ -51,13 +52,33 @@ extern void get_outlet_states(int bank, int *outlet1, int *outlet2, int *outlet3
 	memset(ioStates, 0, sizeof(int)*7);					// triggger state of 3 outputs and 4 inputs
     strcpy(firmware, "");
     loadSharedLibrary();
-    
+
     if ((MaxUnits=(*InitPowerUSB_Address)(&i, firmware)) > 0)		// Initialize the PowerUSB
         connected = (*CheckStatusPowerUSB_Address)();
+
     // TODO: sometime when I have multiple pwrusb strips attached, test `bank`
     (*SetCurrentPowerUSB_Address)(bank);
+    
+//     See:
+//     http://smile.amazon.com/forum/-/Tx3S42X36ZWYTGH/ref=ask_dp_dpmw_al_hza?asin=B008AZW9P6
+// 
+//         I am using my PwrUSB connected to a MacMini. They don't support Mac, but
+//         they were nice enough to send me the C src code for the programming library.
+//         I discovered a bug related ReadPortStatePowerUSB().
+// 
+//         The read function implementation does not match the documentation. According
+//         to the code, the 3 return parameters must go in with values greater than 0
+//         otherwise the ports are not actually read. And the returned status is
+//         actually the on/off state of the last one read.
+// HR: so, therefore, initialize in1,in2,in3 before requesting.  I still haven't figured out
+//     what the last comment about 'last one read' means.
+
+    in1 = 999;
+    in2 = 999;
+    in3 = 999;
 
     (*ReadPortStatePowerUSB_Address)(&in1, &in2, &in3);
+
     *outlet1 = in1;
     *outlet2 = in2;
     *outlet3 = in3;
@@ -75,7 +96,7 @@ extern void set_outlet_states(int bank, int outlet1, int outlet2, int outlet3)
 	memset(ioStates, 0, sizeof(int)*7);					// triggger state of 3 outputs and 4 inputs
     strcpy(firmware, "");
     loadSharedLibrary();
-    
+
     if ((MaxUnits=(*InitPowerUSB_Address)(&i, firmware)) > 0)		// Initialize the PowerUSB
         connected = (*CheckStatusPowerUSB_Address)();
     // TODO: sometime when I have multiple pwrusb strips attached, test `bank`
