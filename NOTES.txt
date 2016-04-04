@@ -85,6 +85,7 @@ Simple/dirty test sequence:  (TODO: turn this into an actual test routine)
 
     import pwrusb
     import time
+    import numpy as np
     for i in np.arange(10):
         s = r(), r(), r()
         pwrusb.set_all_outlet_states(s)
