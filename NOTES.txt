@@ -79,6 +79,20 @@ uninstall:
     
     cat installed_files.txt | xargs rm -rf 
 
+## test sequence
+
+Simple/dirty test sequence:  (TODO: turn this into an actual test routine)
+
+    import pwrusb
+    import time
+    for i in np.arange(10):
+        s = r(), r(), r()
+        pwrusb.set_all_outlet_states(s)
+        s1 = pwrusb.get_all_outlet_states()
+        print(s,s1)
+        if s[0] is not s1[0] or s[1] is not s1[1] or s[2] is not s1[2]:
+            print('\toops! examine above line')
+        time.sleep(1)
 
 ----
 
