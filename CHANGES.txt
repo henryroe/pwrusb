@@ -2,6 +2,12 @@
 pwrusb Change Log
 ~~~~~~~~~~~~~~~~~
 
+------------------
+v1.0.1, 2016-04-03
+------------------
+
+- Major bug fix that fixes the problem that power status was almost always (incorrectly) False,False,False
+
 ------------------------
 v1.0.0dev1-2, 2016-04-01
 ------------------------
