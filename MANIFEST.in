@@ -6,3 +6,5 @@ include NOTES.txt
 include PwrUsbCmd_interface-without-version.cpp
 include PwrUsbCmd_interface.i
 include __about__.py
+include libpowerusb.dylib
+include _pwrusb_swig_interface.so
