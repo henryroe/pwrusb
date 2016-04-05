@@ -52,8 +52,6 @@ class MyBuild(build):
         subprocess.call("make")
         build.run(self)
 
-# print('xyz', get_python_lib())
-
 setup(name=about["__title__"],
       version=about["__version__"],
       description=about["__summary__"],
