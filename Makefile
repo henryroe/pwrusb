@@ -49,4 +49,4 @@ clean:
 	rm -f PwrUSBImp.h
 	rm -rf build
 	rm -rf __pycache__
-	rm -f Mac.zip
+# 	rm -f Mac.zip
