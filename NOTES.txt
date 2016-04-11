@@ -106,6 +106,7 @@ Simple/dirty test sequence:  (TODO: turn this into an actual test routine)
 - check `git status` to make sure nothing still dangling
 - Then:
 
+    source activate pwrusb-dev
     cd /Users/hroe/Dropbox/py/pwrusb
     rm -rf dist/*  # you probably want to do this to clean up
     rm -rf build   # you may want to do this to clean up?
