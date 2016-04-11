@@ -65,7 +65,7 @@ The purpose of this file is to provide a few functions for SWIG wrapping to Pyth
 
 set up fresh:
 
-    conda create -n pwrusb-dev python=3.5 anaconda
+    conda create -n pwrusb-dev python=3.5 anaconda ipython
     source activate pwrusb-dev
     pip install pypandoc
 

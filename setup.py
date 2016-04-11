@@ -61,8 +61,8 @@ setup(name=about["__title__"],
       url=about["__uri__"],
       license=about["__license__"],
       cmdclass={'build': MyBuild},
-      data_files=[(get_python_lib() + '/', ['_pwrusb_swig_interface.so']),
-                  (get_python_lib() + '/', ['libpowerusb.dylib'])],
+      data_files=[(get_python_lib() + '/xyz/', ['_pwrusb_swig_interface.so']),
+                  (get_python_lib() + '/xyz/', ['libpowerusb.dylib'])],
       # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
           'Environment :: MacOS X', # only intended for controlling pwrusb strips from Mac OSX
