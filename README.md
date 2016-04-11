@@ -14,9 +14,7 @@ To avoid copyright issues, several files are not included in this distribution. 
 A version of libusb-1.0 will need to be installed.  One straightforward way to get this is via [homebrew](http://brew.sh/) with:
 
     brew install libusb
-    
-TODO: determine if above should be libusb or libusb-compat
-    
+        
 The `swig` package also needs to be installed in your python distribution for pwrusb to work. One straightforward way to get this is via [homebrew](http://brew.sh/) with:
 
     brew install swig
